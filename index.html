@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eric Geovane — Desenvolvedor Web</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Cursor personalizado -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Fundo com partículas -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Header / Nav -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-bracket">&lt;</span>EG<span class="logo-bracket">/&gt;</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Skills</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#sobre" class="mobile-link">Sobre</a>
+      <a href="#habilidades" class="mobile-link">Skills</a>
+      <a href="#projetos" class="mobile-link">Projetos</a>
+      <a href="#contato" class="mobile-link">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-tag reveal">Desenvolvedor Web</div>
+      <h1 class="hero-title reveal">
+        <span class="line">Eric</span>
+        <span class="line accent-line">Geovane<span class="dot">.</span></span>
+      </h1>
+      <p class="hero-desc reveal">
+        Transformo ideias em experiências digitais modernas,<br>
+        com código limpo e design que impressiona.
+      </p>
+      <div class="hero-ctas reveal">
+        <a href="#projetos" class="btn-primary">Ver Projetos</a>
+        <a href="#contato" class="btn-ghost">Falar comigo</a>
+      </div>
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span> Disponível para projetos
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="code-card">
+        <div class="card-header">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+          <span class="card-file">eric.js</span>
+        </div>
+        <pre class="card-code"><span class="kw">const</span> <span class="fn">dev</span> = {
+  nome: <span class="str">"Eric Geovane"</span>,
+  foco: <span class="str">"Web Development"</span>,
+  experiencia: <span class="str">"+1 ano"</span>,
+  paixao: <span class="str">"UI criativas"</span>,
+  status: <span class="str">"aberto ✓"</span>
+};</pre>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="section-label">01 — Sobre mim</div>
+      <div class="sobre-grid">
+        <div class="sobre-text">
+          <h2 class="section-title">Quem está<br><span class="accent">por trás do código?</span></h2>
+          <p>Olá! Sou <strong>Eric Geovane</strong>, desenvolvedor web apaixonado por criar interfaces que unem estética e funcionalidade. Com mais de um ano de experiência, construo projetos do zero com foco em qualidade, performance e design moderno.</p>
+          <p>Acredito que um bom produto digital começa numa boa conversa — e termina num código bem feito.</p>
+          <a href="https://instagram.com/geovanecodes" target="_blank" rel="noopener" class="instagram-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @geovanecodes
+          </a>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-num">+1</span>
+            <span class="stat-label">ano de experiência</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">linhas de código</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">dedicação</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">PT</span>
+            <span class="stat-label">baseado no Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section class="habilidades" id="habilidades">
+    <div class="container">
+      <div class="section-label">02 — Habilidades</div>
+      <h2 class="section-title">Minhas <span class="accent">ferramentas</span></h2>
+      <div class="skills-grid">
+        <div class="skill-item" data-skill="HTML5">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+          </div>
+          <span>HTML5</span>
+        </div>
+        <div class="skill-item" data-skill="CSS3">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg>
+          </div>
+          <span>CSS3</span>
+        </div>
+        <div class="skill-item" data-skill="JavaScript">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+          </div>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-item" data-skill="React">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09c.285 0 .52.063.698.168.903.52 1.243 2.507.709 5.072-.15-.049-.304-.094-.463-.138a9.868 9.868 0 0 0-.483-.12c-.246-1.08-.617-2.09-1.084-2.94.5-.376.985-.697 1.428-.937.3-.16.583-.234.857-.253l-.662-.106zM12 3.474c.516.76.99 1.628 1.39 2.578-.45.09-.908.198-1.39.325-.48-.127-.937-.234-1.39-.325.4-.95.874-1.818 1.39-2.578zM5.147 5.39c.28 0 .56.077.857.252.44.24.93.56 1.427.937-.47.85-.834 1.855-1.085 2.94a9.885 9.885 0 0 0-.483.12c-.16.044-.313.09-.463.138-.534-2.567-.194-4.553.71-5.072.178-.105.413-.167.698-.168l-.661.106zm-3.14 5.33c1.074.44 2.27.773 3.56.99-.107.48-.198.974-.267 1.476-.07.503-.12 1.003-.138 1.496-1.85-.7-3.115-1.647-3.115-2.678 0-.554.344-1.094 1.015-1.573l-.055.29zm17.23 2.41c.67.48 1.014 1.02 1.014 1.574 0 1.04-1.27 1.988-3.11 2.68-.018-.495-.07-.996-.136-1.498-.07-.503-.16-.997-.268-1.477 1.287-.216 2.48-.55 3.553-.99l-.053.29zM12 12.004c.41 0 .81.02 1.2.058.56.56 1.1 1.183 1.59 1.853.39.54.75 1.09 1.07 1.64-.18.44-.39.87-.61 1.28-.26.47-.54.93-.83 1.37-.54.057-1.1.086-1.67.086-.58 0-1.14-.03-1.68-.086-.29-.44-.57-.9-.83-1.37-.22-.41-.43-.84-.61-1.28.32-.55.68-1.1 1.07-1.64.49-.67 1.03-1.294 1.59-1.853.39-.04.79-.058 1.2-.058zm-4.83.75c.48.085.973.184 1.473.295-.06.26-.11.522-.15.786-.04.265-.07.53-.09.794-.5-.68-.96-1.37-1.38-2.062l.147.187zm9.66 0l.147-.187c-.42.693-.88 1.383-1.38 2.063-.02-.264-.05-.53-.09-.794-.04-.264-.09-.527-.15-.786.5-.11.993-.21 1.473-.295zm-7.78 3.254c.087.15.177.3.27.448.097.15.194.3.294.448-.198-.015-.394-.033-.588-.056l.024-.84zm5.9 0l.023.84c-.193.023-.39.04-.588.056.1-.148.197-.298.294-.448.093-.148.183-.298.27-.448zM12 15.27c.308.39.625.793.938 1.178-.312.015-.625.023-.938.023-.313 0-.626-.008-.938-.023.313-.385.63-.788.938-1.178z"/></svg>
+          </div>
+          <span>React</span>
+        </div>
+        <div class="skill-item" data-skill="Node.js">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082 c0.57,0.329,0.924,0.944,0.924,1.603v10.15c0,0.659-0.354,1.275-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z"/></svg>
+          </div>
+          <span>Node.js</span>
+        </div>
+        <div class="skill-item" data-skill="Git">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+          </div>
+          <span>Git</span>
+        </div>
+        <div class="skill-item" data-skill="Figma">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.098-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg>
+          </div>
+          <span>Figma</span>
+        </div>
+        <div class="skill-item" data-skill="Responsivo">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><rect x="2" y="7" width="20" height="14" rx="2"/><line x1="9" y1="21" x2="15" y2="21"/></svg>
+          </div>
+          <span>Responsivo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section class="projetos" id="projetos">
+    <div class="container">
+      <div class="section-label">03 — Projetos</div>
+      <h2 class="section-title">O que eu <span class="accent">construí</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card featured">
+          <div class="project-meta">
+            <span class="project-num">01</span>
+            <span class="project-tag">Web App</span>
+          </div>
+          <h3 class="project-title">Landing Page Moderna</h3>
+          <p class="project-desc">Interface responsiva com animações CSS e design focado em conversão. Construída com HTML, CSS e JavaScript puro.</p>
+          <div class="project-stack">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://instagram.com/geovanecodes" target="_blank" class="proj-link">Ver no Instagram →</a>
+          </div>
+          <div class="project-bg-glow"></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-meta">
+            <span class="project-num">02</span>
+            <span class="project-tag">Front-end</span>
+          </div>
+          <h3 class="project-title">Dashboard de Dados</h3>
+          <p class="project-desc">Painel interativo com gráficos dinâmicos e componentes reutilizáveis em React.</p>
+          <div class="project-stack">
+            <span>React</span><span>CSS</span><span>API</span>
+          </div>
+          <div class="project-links">
+            <a href="https://instagram.com/geovanecodes" target="_blank" class="proj-link">Ver no Instagram →</a>
+          </div>
+          <div class="project-bg-glow"></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-meta">
+            <span class="project-num">03</span>
+            <span class="project-tag">Full Stack</span>
+          </div>
+          <h3 class="project-title">Aplicação Web Completa</h3>
+          <p class="project-desc">Projeto completo com back-end em Node.js, autenticação e banco de dados integrado.</p>
+          <div class="project-stack">
+            <span>Node.js</span><span>React</span><span>DB</span>
+          </div>
+          <div class="project-links">
+            <a href="https://instagram.com/geovanecodes" target="_blank" class="proj-link">Ver no Instagram →</a>
+          </div>
+          <div class="project-bg-glow"></div>
+        </div>
+
+      </div>
+
+      <div class="projects-cta">
+        <p>Quer ver mais projetos?</p>
+        <a href="https://instagram.com/geovanecodes" target="_blank" class="btn-primary">Visitar @geovanecodes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="contato" id="contato">
+    <div class="container">
+      <div class="section-label">04 — Contato</div>
+      <div class="contato-grid">
+        <div class="contato-text">
+          <h2 class="section-title">Vamos <span class="accent">trabalhar juntos?</span></h2>
+          <p>Estou disponível para projetos freelance, colaborações e oportunidades. Me manda uma mensagem!</p>
+          <div class="contato-links">
+            <a href="https://instagram.com/geovanecodes" target="_blank" class="contato-item">
+              <div class="contato-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div>
+                <span class="contato-label">Instagram</span>
+                <span class="contato-val">@geovanecodes</span>
+              </div>
+              <span class="contato-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contato-form-wrap">
+          <form class="contato-form" id="contactForm">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" placeholder="Seu nome" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" placeholder="seuemail@exemplo.com" required />
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" rows="4" placeholder="Conte um pouco sobre seu projeto..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-width" id="submitBtn">
+              Enviar mensagem
+            </button>
+            <div class="form-success" id="formSuccess">✓ Mensagem enviada com sucesso!</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#" class="logo">
+          <span class="logo-bracket">&lt;</span>EG<span class="logo-bracket">/&gt;</span>
+        </a>
+        <a href="https://instagram.com/geovanecodes" target="_blank" class="footer-ig">@geovanecodes</a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>© 2024 Eric Geovane. Feito com 💜 e muito café.</p>
+        <a href="#hero" class="back-top">↑ Topo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
