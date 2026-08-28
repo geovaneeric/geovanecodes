@@ -21,7 +21,7 @@ export const translations = {
     'hero.cta.contact': 'Falar comigo',
     'hero.badge': 'Disponível para projetos',
     'code.focus': 'Desenvolvimento Web',
-    'code.experience': '+1 ano',
+    'code.experience': '+3 anos',
     'code.passion': 'UI criativas',
     'hero.code.status': 'aberto ✓',
 
@@ -31,8 +31,8 @@ export const translations = {
     'sobre.p1.pre': 'Olá! Sou ',
     'sobre.p1.name': 'Eric Geovane',
     'sobre.p1.post': ', desenvolvedor web apaixonado por criar interfaces que unem estética e funcionalidade. Com mais de um ano de experiência, construo projetos do zero com foco em qualidade, performance e design moderno.',
-    'sobre.p2': 'Acredito que um bom produto digital começa numa boa conversa — e termina num código bem feito.',
-    'stat.exp': 'ano de experiência',
+    'sobre.p2': 'Acredito que um bom produto digital começa numa boa conversa, e termina num código bem feito.',
+    'stat.exp': 'anos de experiência',
     'stat.lines': 'linhas de código',
     'stat.dedication': 'dedicação',
     'stat.location': 'baseado no Brasil',
@@ -57,7 +57,7 @@ export const translations = {
     'proj.desc.2': 'Painel interativo com gráficos dinâmicos e componentes reutilizáveis em React.',
     'proj.title.3': 'Aplicação Web Completa',
     'proj.desc.3': 'Projeto completo com back-end em Node.js, autenticação e banco de dados integrado.',
-    'proj.link': 'Ver no Instagram →',
+    'proj.link': 'Acesse aqui →',
     'projetos.cta.text': 'Quer ver mais projetos?',
     'projetos.cta.btn': 'Visitar @geovanecodes',
 
@@ -78,7 +78,7 @@ export const translations = {
     'form.sending': 'Enviando...',
     'form.success': '✓ Mensagem enviada com sucesso!',
 
-    'footer.copy': '© 2026 Eric Geovane. Feito com 💜 e muito café.',
+    'footer.copy': '© 2026 Eric Geovane. Feito com música e muito café.',
     'footer.top': '↑ Topo',
 
     'lang.toggle.aria': 'Mudar idioma do site'
@@ -108,7 +108,7 @@ export const translations = {
     'sobre.p1.pre': "Hey! I'm ",
     'sobre.p1.name': 'Eric Geovane',
     'sobre.p1.post': ", a web developer passionate about building interfaces that blend aesthetics and function. With over a year of experience, I build projects from scratch with a focus on quality, performance and modern design.",
-    'sobre.p2': 'I believe a good digital product starts with a good conversation — and ends with well-crafted code.',
+    'sobre.p2': 'I believe a good digital product starts with a good conversation, and ends with well-crafted code.',
     'stat.exp': 'year of experience',
     'stat.lines': 'lines of code',
     'stat.dedication': 'dedication',
@@ -155,7 +155,7 @@ export const translations = {
     'form.sending': 'Sending...',
     'form.success': '✓ Message sent successfully!',
 
-    'footer.copy': '© 2026 Eric Geovane. Made with 💜 and lots of coffee.',
+    'footer.copy': '© 2026 Eric Geovane. Made with music and lots of coffee.',
     'footer.top': '↑ Top',
 
     'lang.toggle.aria': 'Switch site language'

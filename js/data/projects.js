@@ -11,7 +11,7 @@ export const projects = [
     titleKey: 'proj.title.1',
     descKey: 'proj.desc.1',
     stack: ['HTML', 'CSS', 'JS'],
-    url: 'https://instagram.com/geovanecodes',
+    url: 'https://davimenezes.vercel.app/',
     featured: true
   },
   {
