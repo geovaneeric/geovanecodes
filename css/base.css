@@ -1,0 +1,147 @@
+/* ============================================================
+   base.css — Design tokens, reset, base typography
+   ============================================================ */
+
+:root {
+  /* Core palette */
+  --bg: #07070c;
+  --bg-2: #0c0c16;
+  --bg-3: #12121e;
+  --bg-4: #191928;
+  --white: #f7f7ff;
+  --white-70: rgba(247, 247, 255, 0.7);
+  --white-45: rgba(247, 247, 255, 0.45);
+  --white-25: rgba(247, 247, 255, 0.25);
+  --white-10: rgba(247, 247, 255, 0.08);
+
+  /* Brand violet */
+  --violet: #8b5cf6;
+  --violet-light: #a78bfa;
+  --violet-dark: #6d28d9;
+  --violet-glow: rgba(139, 92, 246, 0.32);
+  --violet-subtle: rgba(139, 92, 246, 0.08);
+
+  /* Syntax-highlight accent trio — the site's recurring "code" signature,
+     reused across badges, tags and the language switch */
+  --syntax-kw: #c084fc;   /* keyword purple  */
+  --syntax-fn: #818cf8;   /* function indigo */
+  --syntax-str: #34d399;  /* string green    */
+  --syntax-warn: #fbbf24; /* amber, used sparingly for highlights */
+
+  --border: rgba(139, 92, 246, 0.2);
+  --border-soft: rgba(247, 247, 255, 0.08);
+
+  --radius-lg: 20px;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-pill: 100px;
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.35s var(--ease);
+  --transition-fast: 0.2s var(--ease);
+
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  --container-w: 1200px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  body { cursor: auto; }
+}
+
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; }
+button { font-family: inherit; }
+ul { list-style: none; }
+
+::selection {
+  background: var(--violet-glow);
+  color: var(--white);
+}
+
+/* Subtle film-grain overlay for depth — modern tactile touch */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Layout helpers */
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+section { position: relative; }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--violet-light);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+
+.accent { color: var(--violet-light); }
+
+/* Focus visibility — accessibility floor */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--violet-light);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

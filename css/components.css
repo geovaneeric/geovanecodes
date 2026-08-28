@@ -1,0 +1,602 @@
+/* ============================================================
+   components.css — Reusable UI pieces
+   ============================================================ */
+
+/* ── Logo ───────────────────────────────────────────── */
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+}
+
+.logo-bracket { color: var(--violet); }
+
+/* ── Nav links ──────────────────────────────────────── */
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--white-45);
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--violet);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--white); }
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+.mobile-link {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.1rem;
+  color: var(--white-45);
+  display: block;
+}
+.mobile-link:last-child { border: none; }
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.menu-btn span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+@media (max-width: 768px) { .menu-btn { display: flex; } }
+
+/* ── Language toggle — styled like a live code call, the
+   site's recurring "syntax" signature ─────────────────── */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 7px 14px;
+  color: var(--white-70);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition-fast);
+}
+
+.lang-toggle:hover {
+  border-color: var(--violet);
+  background: var(--violet-subtle);
+  transform: translateY(-1px);
+}
+
+.lang-toggle .lt-fn { color: var(--syntax-fn); }
+.lang-toggle .lt-str { color: var(--syntax-str); }
+.lang-toggle .lt-punc { color: var(--white-25); }
+
+/* ── Buttons ────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--violet);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--violet-light), var(--violet-dark));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--violet-glow);
+}
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary span { position: relative; z-index: 1; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--white-45);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.btn-ghost:hover {
+  border-color: var(--violet-light);
+  color: var(--white);
+}
+
+.btn-ghost svg { width: 18px; height: 18px; }
+
+.full-width { width: 100%; justify-content: center; }
+
+/* ── Hero pieces ────────────────────────────────────── */
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--violet-light);
+  margin-bottom: 28px;
+  background: var(--violet-subtle);
+  min-height: 1.6em;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+.hero-title .line { display: block; }
+.accent-line { color: var(--violet-light); }
+.dot { color: var(--violet); }
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--white-45);
+  margin-bottom: 36px;
+  line-height: 1.8;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--white-45);
+}
+
+.badge-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: pulse-green 2s infinite;
+}
+
+@media (max-width: 900px) {
+  .hero-ctas { justify-content: center; }
+  .hero-badge { margin: 0 auto; }
+}
+
+/* Code card */
+.code-card {
+  background: var(--bg-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: 340px;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5), 0 0 80px rgba(139, 92, 246, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .code-card { width: 100%; max-width: 360px; }
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dot-red { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
+.dot-yellow { width: 12px; height: 12px; border-radius: 50%; background: #febc2e; }
+.dot-green { width: 12px; height: 12px; border-radius: 50%; background: #28c840; }
+
+.card-file {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--white-25);
+  font-family: var(--font-mono);
+}
+
+.card-code {
+  padding: 20px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.83rem;
+  line-height: 1.9;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.kw { color: var(--syntax-kw); }
+.fn { color: var(--syntax-fn); }
+.str { color: var(--syntax-str); }
+
+/* Scroll cue */
+.scroll-cue {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--white-25);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  animation: fade-bounce 2s ease-in-out infinite;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--violet-light), transparent);
+}
+
+/* ── Sobre pieces ───────────────────────────────────── */
+.sobre-text p {
+  color: var(--white-45);
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+.sobre-text strong { color: var(--white); font-weight: 500; }
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  margin-right: 10px;
+  padding: 12px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--violet-light);
+  font-size: 0.9rem;
+  transition: border-color var(--transition), background var(--transition);
+}
+.social-link svg { width: 18px; height: 18px; }
+.social-link:hover { border-color: var(--violet-light); background: var(--violet-subtle); }
+
+.social-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+
+/* Language badges (Português / English) */
+.lang-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.lang-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-3);
+  border: 1px solid var(--border-soft);
+  font-size: 0.85rem;
+}
+
+.lang-badge .lb-name { color: var(--white); font-weight: 500; }
+.lang-badge .lb-level {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--syntax-str);
+}
+
+.stat-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color var(--transition), background var(--transition);
+}
+.stat-card:hover { border-color: var(--violet); background: var(--violet-subtle); }
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--violet-light);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--white-45);
+  line-height: 1.4;
+}
+
+/* ── Skill items ────────────────────────────────────── */
+.skill-item {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  cursor: default;
+  transition: border-color var(--transition), transform var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+.skill-item:hover {
+  border-color: var(--violet);
+  background: var(--violet-subtle);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.15);
+}
+
+.skill-icon { width: 44px; height: 44px; color: var(--violet-light); }
+.skill-icon svg { width: 100%; height: 100%; }
+
+.skill-item span {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--white-45);
+  transition: color var(--transition);
+}
+.skill-item:hover span { color: var(--white); }
+
+/* ── Project cards ──────────────────────────────────── */
+.project-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.project-card:hover { border-color: var(--violet); transform: translateY(-4px); }
+
+.project-bg-glow {
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--violet-glow) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+.project-card:hover .project-bg-glow { opacity: 1; }
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.project-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--violet-light);
+  letter-spacing: 0.1em;
+}
+
+.project-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  color: var(--white-25);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--white-45);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.project-stack {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.project-stack span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--violet-subtle);
+  border: 1px solid var(--border);
+  color: var(--violet-light);
+}
+
+.proj-link {
+  font-size: 0.875rem;
+  color: var(--violet-light);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.proj-link:hover { color: var(--white); }
+
+/* ── Contato pieces ─────────────────────────────────── */
+.contato-text p { color: var(--white-45); margin-bottom: 36px; }
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition), background var(--transition), transform var(--transition-fast);
+}
+.contato-item:hover {
+  border-color: var(--violet-light);
+  background: var(--violet-subtle);
+  transform: translateX(4px);
+}
+
+.contato-icon {
+  width: 40px; height: 40px;
+  background: var(--violet-subtle);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--violet-light);
+  flex-shrink: 0;
+}
+.contato-icon svg { width: 20px; height: 20px; }
+
+.contato-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--white-25);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contato-val {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.contato-arrow {
+  margin-left: auto;
+  color: var(--violet-light);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Form */
+.contato-form { display: flex; flex-direction: column; gap: 20px; }
+
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+
+.form-group label {
+  font-size: 0.8rem;
+  color: var(--white-45);
+  letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  outline: none;
+  resize: vertical;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--white-25); }
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--violet);
+  background: var(--bg-4);
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  color: var(--syntax-str);
+  font-size: 0.9rem;
+  padding: 12px;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: var(--radius-sm);
+  background: rgba(52, 211, 153, 0.06);
+}
+.form-success.show { display: block; }
+
+/* ── Footer pieces ──────────────────────────────────── */
+.footer-social-link {
+  color: var(--violet-light);
+  transition: color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+.footer-social-link svg { width: 18px; height: 18px; }
+.footer-social-link:hover { color: var(--white); }
+
+.footer-bottom p { font-size: 0.85rem; color: var(--white-25); }
+
+.back-top {
+  font-size: 0.85rem;
+  color: var(--violet-light);
+  transition: color var(--transition);
+}
+.back-top:hover { color: var(--white); }

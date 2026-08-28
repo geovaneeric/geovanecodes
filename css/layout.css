@@ -1,0 +1,247 @@
+/* ============================================================
+   layout.css — Header, hero and section-level layout/grids
+   ============================================================ */
+
+/* ── Header ─────────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 40px;
+  transition: background var(--transition), backdrop-filter var(--transition), border-color var(--transition);
+}
+
+.header.scrolled {
+  background: rgba(7, 7, 12, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 12px;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .header { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .mobile-nav.open { display: flex; }
+}
+
+/* ── Hero ───────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  gap: 48px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(ellipse, rgba(109, 40, 217, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 50%;
+  height: 70%;
+  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 600px;
+  flex: 1;
+  z-index: 1;
+}
+
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 100px 24px 80px;
+    text-align: center;
+    gap: 48px;
+  }
+  .hero-content { max-width: 100%; }
+  .hero-visual { width: 100%; }
+}
+
+/* ── Sobre ──────────────────────────────────────────── */
+.sobre { padding: 120px 0; background: var(--bg-2); }
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ── Habilidades ────────────────────────────────────── */
+.habilidades { padding: 120px 0; background: var(--bg); }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Projetos ───────────────────────────────────────── */
+.projetos { padding: 120px 0; background: var(--bg-2); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.project-card.featured { grid-column: 1 / -1; }
+
+.projects-cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.projects-cta-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured { grid-column: auto; }
+}
+
+/* ── Contato ────────────────────────────────────────── */
+.contato { padding: 120px 0; background: var(--bg); }
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contato-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .contato-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+.footer {
+  padding: 48px 0;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 24px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  .footer-top, .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* ── Generic section mobile padding ────────────────────── */
+@media (max-width: 768px) {
+  .sobre, .habilidades, .projetos, .contato { padding: 80px 0; }
+}
